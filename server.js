@@ -23,10 +23,13 @@ const sess = {
   app.use(session(sess));
   
   app.use(express.json());
+  //express.static is a middleware function and it serves statif files such as js files, css, files
+  //I did the public file so that the application can serve static files from the 'public' folder that holds my js and css files.
+  app.use(express.static(path.join(__dirname, 'public')));
   app.use(express.urlencoded({ extended: true }));
   
   app.use(routes);
   
   sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+    app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
   });
