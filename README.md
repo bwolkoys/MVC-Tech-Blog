@@ -58,3 +58,4 @@ Packages to Install:
 
 ## Resources
 - for server.js: copied from Module 14, Activity 28 (mini project)
+- for connection.js: taken from Module 14, Activity 23-Ins_Auth-Review
