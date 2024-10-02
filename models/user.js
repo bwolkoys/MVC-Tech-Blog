@@ -33,6 +33,17 @@ User.init(
     },
   },
   {
+    //using hooks property defined for before create and before update
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 8); //8 is salt rounds!! the mroe salt rounds the more secure
+        return newUserData;
+      },
+      beforeUpdate: async (updatedUserData) => {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 8);
+        return updatedUserData;
+      },
+    },
     //model options
     sequelize,
     timestamps: false, // doesnt automatically add created at since we already have a section for it
