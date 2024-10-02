@@ -3,7 +3,7 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-//Get all comments
+//Getting all comments
 router.get("/", (req, res) => {
     Comment.findAll()
         .then((commentData) => res.json(commentData))
@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
         });
 });
 
-//Create a comment
+//Creating a comment
 router.post('/', async (req, res) => {
     try {
         //creates a new comment adding user_id so we know which user commented
