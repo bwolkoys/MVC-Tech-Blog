@@ -36,8 +36,8 @@ router.get('/', (req, res) => {
             ]
         })
         //using the map function to go over each post and the plain: true converts it into an object in js
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get(
+        .then(postData => {
+            const posts = postData.map(post => post.get(
                 {
                 plain: true
             }));
@@ -87,16 +87,16 @@ router.get('/post/:id', (req, res) => {
                 }
             ]
         })
-        .then(dbPostData => {
+        .then(postData => {
             //if dbPostData ins't found message will say no post found
-            if (!dbPostData) {
+            if (!postData) {
                 res.status(404).json({
                     message: 'No post found'
                 });
                 return;
             }
             // the post is found, it conveets it to plain js object
-            const post = dbPostData.get({
+            const post = postData.get({
                 plain: true
             });
             //this should only show the single post, not a ;ist of all of them
