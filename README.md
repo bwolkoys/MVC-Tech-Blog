@@ -60,3 +60,5 @@ Packages to Install:
 - for server.js: copied from Module 14, Activity 28 (mini project)
 - for connection.js: taken from Module 14, Activity 23-Ins_Auth-Review
 - sequelize documentation: https://sequelize.org/docs/v6/other-topics/naming-strategies/ 
+- associations for index.js in models folder: https://sequelize.org/docs/v6/core-concepts/assocs/ 
+- hooks in user.js- https://sequelize.org/docs/v6/other-topics/hooks/ 
