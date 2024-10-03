@@ -5,9 +5,11 @@ const { user, post, comment } = require('../models');
 //node application and it's requiring the function from a file located in utils folder
 const withAuth = require('../utils/auth');
 
-//retrieving all records in the post model with the specific attributes below including the commentswith specific attributs including the username
-router.get('/', (req, res) => {
-    post.findAll({
+router.get('/', withAuth, (req, res) => {
+    Post.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
             attributes: [
                 'id',
                 'title',
@@ -35,14 +37,13 @@ router.get('/', (req, res) => {
                 }
             ]
         })
-        //using the map function to go over each post and the plain: true converts it into an object in js
         .then(postData => {
             const posts = postData.map(post => post.get(
                 {
                 plain: true
             }));
 
-            res.render('homepage', {
+            res.render('dashboard', {
                 //passing posts and loggedIn as an object into a template called homepage
                 posts,
                 loggedIn: req.session.loggedIn
@@ -54,7 +55,6 @@ router.get('/', (req, res) => {
         });
 });
 
-//finding a single post with a specific id. The post will include the id, title, contect, when it was created, and include comments and username
 router.get('/post/:id', (req, res) => {
     post.findOne({
             where: {
@@ -99,7 +99,7 @@ router.get('/post/:id', (req, res) => {
             const post = postData.get({
                 plain: true
             });
-            //this should only show the single post, not a ;ist of all of them
+            //this should only show the single post, not a list of all of them
             res.render('one-post', {
                 post,
                 loggedIn: req.session.loggedIn
@@ -112,31 +112,10 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
-//the login route. it checks if the user is logged in, if so user is redirected to homepage
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-// user not logged in, it will go to login view to login
-    res.render('login');
-});
-
-//same as above but if user isn't loggedin, it will take user to signup page
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-
-    res.render('signup');
-});
-
-// using the * to catch all get requests that don't fit into the above two
-router.get('*', (req, res) => {
-    res.status(404).send("Can't go there!");
-    // res.redirect('/');
-});
-
+router.get('/new', (req, res) => {
+    res.render('new-post', {
+        loggedIn: true
+    })
+})
 
 module.exports = router;
