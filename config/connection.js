@@ -1,6 +1,6 @@
 //taken from Module 14, Activity 23-Ins_Auth-Review
 const Sequelize = require('sequelize');
-require('dotenv').config();
+require('dotenv').config(); 
 
 let sequelize;
 
