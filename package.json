@@ -1,0 +1,22 @@
+{
+  "name": "mvc-tech-blog",
+  "version": "1.0.0",
+  "description": "This is a CMS-stylr blog. It allows developers to post blogs and comment on other developer's posts. This application can create a community for developer's to learn new technologies, concepts, advancements, and more. Instead of a google search, you can use this application for many offerings.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.4.5",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.0",
+    "pg": "^8.13.0",
+    "sequelize": "^6.37.3"
+  }
+}
