@@ -2,7 +2,7 @@
 const router = require('express').Router();
 //importing the route handlers from 3 spereate files
 const apiRoutes = require('./api');
-const dashboardRoutes = require('./dashboardRoutes.js');
+const dashboardRoutes = require('./api/dashboardRoutes.js');
 const homeRoutes = require('./homeRoutes.js');
 
 //defining the 3 different route paths

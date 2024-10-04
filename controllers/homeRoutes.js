@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 //deconstructing so I can import 3 files from the models folder
-const { user, post, comment } = require('../models');
+const { User, Post, Comment } = require('../models');
 //node application and it's requiring the function from a file located in utils folder
 const withAuth = require('../utils/auth');
 
 //retrieving all records in the post model with the specific attributes below including the commentswith specific attributs including the username
 router.get('/', (req, res) => {
-    post.findAll({
+    Post.findAll({
             attributes: [
                 'id',
                 'title',
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
                     model: Comment,
                     attributes: [
                         'id', 
-                        'comment_text', 
+                        'comment_content', 
                         'post_id', 
                         'user_id', 
                         'created_at'
@@ -56,7 +56,7 @@ router.get('/', (req, res) => {
 
 //finding a single post with a specific id. The post will include the id, title, contect, when it was created, and include comments and username
 router.get('/post/:id', (req, res) => {
-    post.findOne({
+    Post.findOne({
             where: {
                 id: req.params.id
             },

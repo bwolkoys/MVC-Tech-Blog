@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+const sequelize = require('../../config/connection');
 //deconstructing so I can import 3 files from the models folder
-const { user, post, comment } = require('../models');
+const { User, Post, Comment } = require('../../models');
 //node application and it's requiring the function from a file located in utils folder
-const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
@@ -21,7 +21,7 @@ router.get('/', withAuth, (req, res) => {
                     model: Comment,
                     attributes: [
                         'id', 
-                        'comment_text', 
+                        'comment_content', 
                         'post_id', 
                         'user_id', 
                         'created_at'
