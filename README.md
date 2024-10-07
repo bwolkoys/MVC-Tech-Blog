@@ -56,6 +56,8 @@ Packages to Install:
 
 ## Usage
 
+- Here is a link to the site: https://mvc-tech-blog-ozef.onrender.com/ From there, sign up for an account and create your first post. The style of the site and login are currently still in works. 
+
 ## Resources
 - for server.js: copied from Module 14, Activity 28 (mini project)
 - for connection.js: taken from Module 14, Activity 23-Ins_Auth-Review
