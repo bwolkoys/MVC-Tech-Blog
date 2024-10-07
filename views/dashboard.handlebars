@@ -4,11 +4,10 @@
 </section>
 
 
-{{#if posts.length}}
 <section>
     <h2>Your Dashboard for Posts</h2>
+    {{#if posts.length}}
     <ul class="post-list">
-        <!-- conditional -->
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
@@ -16,7 +15,9 @@
         </li>
         {{/each}}
     </ul>
+    {{else}}
+        <p>No posts available. Create a new post!</p>
+    {{/if}}
 </section>
-{{/if}}
 
 <script src="/js/dashboard.js"></script>
