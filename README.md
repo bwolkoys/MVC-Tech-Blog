@@ -68,3 +68,7 @@ Packages to Install:
 - handlebars documentation: https://handlebarsjs.com/guide/#what-is-handlebars 
 
 ## Screenshot
+
+![Screenshot 2024-10-07 at 12 14 19 PM](https://github.com/user-attachments/assets/42262648-1276-4df7-8bec-59c66546953b)
+
+![Screenshot 2024-10-07 at 12 37 48 PM](https://github.com/user-attachments/assets/adc9cc97-a576-4ce7-bb8b-27928a49a545)
