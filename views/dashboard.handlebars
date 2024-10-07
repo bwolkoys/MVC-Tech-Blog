@@ -1,16 +1,27 @@
 <!-- this page is to create a new post --> 
-<section class="new-post-section"></section>
-    <button type="submit" class="btn" id="create-new-post">+ Create a new post</button>
+<section class="new-post-section">
+    <form id="post-form">
+        <div class="form-input-ctr">
+            <label for="post-title">Title of Post:</label>
+            <input type="text" id="post-title" name="title">
+        </div>
+        <div class="form-input-ctr">
+            <label for="content">Enter Content:</label>
+            <input type="text" id="post-content" name="content">
+        </div>
+
+        <button type="submit" class="btn" id="create-new-post">+ Create a new post</button>
+    </form>
 </section>
 
 
 <section>
     <h2>Your Dashboard for Posts</h2>
-    {{#if posts.length}}
     <ul class="post-list">
+    {{#if posts.length}}
         {{#each posts as |post|}}
         <li>
-            {{> post-info post}}
+ 
             <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit your post</a>
         </li>
         {{/each}}

@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// --> All of these routes are prefixed with '/api/user'
+
 //creating a new user. inside the try {} im calling user.create to create a new user. req.body includes username an dpassword
 router.post('/', async (req, res) => {
     try {

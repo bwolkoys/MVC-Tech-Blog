@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
 
 	const title = document.querySelector('#post-title').value.trim();
 
-	const description = document.querySelector('#post-desc').value.trim();
+	const content = document.querySelector('#post-content').value.trim();
 
 	if (title && content) {
 		const response = await fetch(`/api/post`, {
@@ -16,12 +16,15 @@ const newFormHandler = async (event) => {
 		});
 
 		if (response.ok) {
-			document.location.replace('/dashboard');
+		//	document.location.replace('/dashboard');
+			document.location.replace('/');
 		} else {
 			alert('cannot create post');
 		}
 	}
 };
+
+
 
 //to delete a post it checks if the ID of the post to be deleted. it sends a delete request to postRoutes and if ID matches it's deleted
 const delButtonHandler = async (event) => {
@@ -44,6 +47,7 @@ const delButtonHandler = async (event) => {
 document
 	.querySelector('.new-post-section')
 	.addEventListener('submit', newFormHandler);
+	
 
 document
 	.querySelector('.post-list')

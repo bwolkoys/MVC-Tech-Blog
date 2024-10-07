@@ -2,8 +2,13 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//
+// --> All of these routes are prefixed with '/api/post'
 router.post('/', withAuth, async (req, res) => {
+
+  //console.log("Request Object: ", req)
+
+  console.log("incoming Data: ", req.body)  // { title: '', content: '' }
+
   try {
     //creates a new post adding user_id so we know which user posted
     const newPost = await Post.create({
