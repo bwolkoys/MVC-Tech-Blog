@@ -1,11 +1,6 @@
 //taken from module 14 student activity 28 (login.js)
 //submission form sign up. retrieves the username an dpassword input fields and uses document.queryselector to select them by their IDs. then it checks if the username and password are valid (filled in), if so a post request is sent and for the respionse it's either successful or an alert pops up
 
- //triggers the sign up form handler
- document
- .querySelector('.signup-form')
- .addEventListener('submit', signupFormHandler);
-
 const signupFormHandler = async (event) => {
     event.preventDefault();
   
@@ -28,7 +23,7 @@ const signupFormHandler = async (event) => {
   };
   
   //triggers the sign up form handler
-  //document
-   // .querySelector('.signup-form')
-    //.addEventListener('submit', signupFormHandler);
+  document
+   .querySelector('.signup-form')
+   .addEventListener('submit', signupFormHandler);
   
