@@ -66,3 +66,5 @@ Packages to Install:
 - hooks in user.js- https://sequelize.org/docs/v6/other-topics/hooks/ 
 - spread operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax 
 - handlebars documentation: https://handlebarsjs.com/guide/#what-is-handlebars 
+
+## Screenshot
